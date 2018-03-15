@@ -1,0 +1,28 @@
+<!doctype html>
+<html data-layout-decorator="default">
+<head>
+</head>
+<body>
+	<div class="col-6" data-layout-fragment="content">
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>Status</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="status : ${status}">
+					<td data-th-text="${status.text}">Text</td>
+					<td> 
+						<a data-th-href="@{'/status/edit/'+${status.id}}">Redigera | </a>
+						<a data-th-href="@{'/status/remove/'+${status.id}}">Ta bort</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="/status/add">Skapa ny status</a>
+	</div>
+	<div data-layout-decorator="scripts"></div>
+</body>
+</html>
